@@ -30,5 +30,7 @@ namespace Microsoft.Teams.Apps.Celebration.Helpers
         /// Gets manifest id which is Guid
         /// </summary>
         public static string ManifestAppId { get; }
+
+
     }
 }
