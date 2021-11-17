@@ -7,8 +7,11 @@ namespace Microsoft.Teams.Apps.Celebration.Helpers
     using System;
     using System.Collections.Generic;
     using System.IO;
+    using System.Linq;
     using Microsoft.Bot.Connector;
     using Microsoft.Teams.Apps.Celebration.Models;
+    using Microsoft.WindowsAzure.Storage;
+    using Microsoft.WindowsAzure.Storage.Blob;
     using Newtonsoft.Json;
 
     /// <summary>
@@ -29,6 +32,27 @@ namespace Microsoft.Teams.Apps.Celebration.Helpers
         public static int GetCountOfFilesInDirectory(string directoryPath)
         {
             return Directory.Exists(directoryPath) ? Directory.GetFiles(directoryPath).Length : 0;
+        }
+
+        /// <summary>
+        /// Count no. of files in a directory
+        /// </summary>
+        public static int GetFilesFromBlob()
+        {
+            string storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=fpnybjdu4qhp6;AccountKey=WD0FKHIskUPcr1vpttMclylDDBZ3jJbM6m6cTZGwRwevVDd66DvNi2QWp8EkWhxSvFntqwq6kLO7cG/YUwXR8A==;EndpointSuffix=core.windows.net";
+
+           // Retrieve storage account from connection string.
+            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(storageConnectionString);
+
+            // Create the blob client.
+            CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+
+            // Retrieve reference to a previously created container.
+            CloudBlobContainer container = blobClient.GetContainerReference("images");
+
+            // Gets List of Blobs
+            var list = container.ListBlobs().Count();
+            return list;
         }
 
         /// <summary>

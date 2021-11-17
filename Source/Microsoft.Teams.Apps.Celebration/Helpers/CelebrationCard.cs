@@ -60,7 +60,7 @@ namespace Microsoft.Teams.Apps.Celebration.Helpers
                 Title = string.Format(Strings.EventPreviewCardHeader, ownerDisplayName, celebrationEvent.Title),
                 Text = celebrationEvent.Message,
                 Buttons = cardActions,
-                Images = new List<CardImage>() { new CardImage(url: Common.GetImageUrlFromPath(celebrationEvent.ImageUrl)) },
+                Images = new List<CardImage>() { new CardImage(url: celebrationEvent.ImageUrl) },
             };
 
             return previewCard;
@@ -78,7 +78,7 @@ namespace Microsoft.Teams.Apps.Celebration.Helpers
             {
                 Title = string.Format(Strings.EventCardTitle, ownerDisplayName, celebrationEvent.Title),
                 Text = celebrationEvent.Message,
-                Images = new List<CardImage>() { new CardImage(url: Common.GetImageUrlFromPath(celebrationEvent.ImageUrl)) },
+                Images = new List<CardImage>() { new CardImage(url: celebrationEvent.ImageUrl) },
             };
         }
 
