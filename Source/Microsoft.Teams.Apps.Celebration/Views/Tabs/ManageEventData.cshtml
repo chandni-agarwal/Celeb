@@ -25,7 +25,7 @@
                     @foreach (var item in Common.GetFilesFromBlob())
                             {
                                 //var url = $"https://fpnybjdu4qhp6.blob.core.windows.net/images/{i}.png";
-                                var url = item.Uri.AbsoluteUri;
+                                var url = item.Uri.AbsolutePath;
                                 // var isActive = ((Model.CelebrationEvent == null) && (item == null)) ||
                                 //          (Model.CelebrationEvent?.ImageUrl == url);
                                 var isActive = true;
