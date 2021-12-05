@@ -37,7 +37,8 @@ namespace Microsoft.Teams.Apps.Celebration.Helpers
         /// <summary>
         /// Count no. of files in a directory
         /// </summary>
-        public static int GetFilesFromBlob()
+        /// <returns>.. </returns>
+        public static IEnumerable<IListBlobItem> GetFilesFromBlob()
         {
             string storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=fpnybjdu4qhp6;AccountKey=WD0FKHIskUPcr1vpttMclylDDBZ3jJbM6m6cTZGwRwevVDd66DvNi2QWp8EkWhxSvFntqwq6kLO7cG/YUwXR8A==;EndpointSuffix=core.windows.net";
 
@@ -51,7 +52,7 @@ namespace Microsoft.Teams.Apps.Celebration.Helpers
             CloudBlobContainer container = blobClient.GetContainerReference("images");
 
             // Gets List of Blobs
-            var list = container.ListBlobs().Count();
+            var list = container.ListBlobs();
             return list;
         }
 
