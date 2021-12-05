@@ -26,7 +26,7 @@
                             {
                                 //var url = $"https://fpnybjdu4qhp6.blob.core.windows.net/images/{i}.png";
                                 var url = item.Uri.AbsoluteUri;
-                                 var isActive = (Model.CelebrationEvent == null) ||
+                                 var isActive = ((Model.CelebrationEvent == null) && (item == Common.GetFilesFromBlob().First())) ||
                                           (Model.CelebrationEvent?.ImageUrl == url);
                         <div class="carousel-item @(isActive ? "active" : string.Empty)">
                             <img src="@url">
