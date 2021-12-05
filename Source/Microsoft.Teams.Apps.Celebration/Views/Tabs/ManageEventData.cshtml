@@ -25,9 +25,9 @@
                     @{ var i = 0;
                         foreach (var item in Common.GetFilesFromBlob())
                                 {
-                                    //var url = $"https://fpnybjdu4qhp6.blob.core.windows.net/images/{i}.png";
+                                    var url = $"https://fpnybjdu4qhp6.blob.core.windows.net/images/0.png";
 
-                                    var url = item.Uri.AbsoluteUri;
+                                    url = item.Uri.AbsoluteUri;
                                     var isActive = ((Model.CelebrationEvent == null) && (i == 0)) ||
                                                             (Model.CelebrationEvent?.ImageUrl == url);
                                     i = i++;
