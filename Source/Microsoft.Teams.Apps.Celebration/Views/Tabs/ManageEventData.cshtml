@@ -156,7 +156,7 @@
         // Set selected users
         if (Model.CelebrationEvent.Users != null)
         {
-            @: $("#eventTeam").val(@Html.Raw(Json.Encode(Model.CelebrationEvent.Users.Select(x => x.DisplayName))));
+            @: $("#eventUser").val(@Html.Raw(Json.Encode(Model.CelebrationEvent.Users.Select(x => x.DisplayName))));
         }
     }
     else
