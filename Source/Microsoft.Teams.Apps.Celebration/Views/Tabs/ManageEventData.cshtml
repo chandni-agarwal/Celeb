@@ -152,6 +152,12 @@
         {
             @: $("#eventTeam").val(@Html.Raw(Json.Encode(Model.CelebrationEvent.Teams.Select(x => x.Id))));
         }
+
+        // Set selected users
+        if (Model.CelebrationEvent.Users != null)
+        {
+            @: $("#eventTeam").val(@Html.Raw(Json.Encode(Model.CelebrationEvent.Users.Select(x => x.DisplayName))));
+        }
     }
     else
     {
@@ -166,6 +172,12 @@
         optionsSelectedText: '',
     })
 
+    $('#eventUser').customMultiselect({
+        buttonWidth: '100%',
+        maxHeight: 188,
+        noneSelectedText: 'Which user would you like to celebrate with?',
+        optionsSelectedText: '',
+    })
     $('#eventType').customMultiselect({
     buttonWidth: '100%',
         maxHeight: 138,
@@ -209,6 +221,11 @@
         listMinHeight: '40',
         listMaxHeight: '188',
         offset:'10',
+    });
+    $("#eventUser").addFancyScrollbar({
+        listMinHeight: '40',
+        listMaxHeight: '188',
+        offset: '10',
     });
 
     $('#timezonelist').addFancyScrollbar({

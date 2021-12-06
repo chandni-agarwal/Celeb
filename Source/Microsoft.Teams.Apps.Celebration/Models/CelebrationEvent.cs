@@ -90,5 +90,12 @@ namespace Microsoft.Teams.Apps.Celebration.Models
         /// </summary>
         [JsonProperty("teams")]
         public List<Team> Teams { get; set; }
+
+
+        /// <summary>
+        /// Gets or sets list of team information where bot is installed
+        /// </summary>
+        [JsonProperty("users")]
+        public List<User> Users { get; set; }
     }
 }
