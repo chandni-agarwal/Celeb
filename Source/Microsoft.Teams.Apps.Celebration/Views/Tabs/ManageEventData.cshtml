@@ -105,7 +105,7 @@
                     <select id="eventUser" multiple>
                         @foreach (var user in Model.UserDetails)
                         {
-                            <option value="@user.Id" selected>@user.AadObjectId</option>
+                            <option value="@user.Id" selected>@user.DisplayName</option>
                         }
                     </select>
                 </div>
