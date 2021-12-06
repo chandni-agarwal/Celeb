@@ -33,6 +33,11 @@ namespace Microsoft.Teams.Apps.Celebration.Models
         public IList<Team> TeamDetails { get; set; }
 
         /// <summary>
+        /// Gets or sets UserDetails
+        /// </summary>
+        public IList<User> UserDetails { get; set; }
+
+        /// <summary>
         /// Gets or sets list of windows timezones, from TimeZoneInfo API
         /// </summary>
         public IList<TimeZoneDisplayInfo> TimeZoneList { get; set; }

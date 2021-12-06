@@ -49,6 +49,13 @@ namespace Microsoft.Teams.Apps.Celebration.Helpers
         Task<Models.User> GetUserByAadObjectIdAsync(string aadObjectId);
 
         /// <summary>
+        /// Get User by aadObjectname
+        /// </summary>
+        /// <param name="name">Displayname of user</param>
+        /// <returns>A <see cref="Task"/> representing the asynchronous operation</returns>
+        Task<Models.User> GetUserByAadObjectNameAsync();
+
+        /// <summary>
         /// Add or update user
         /// </summary>
         /// <param name="user">User object</param>

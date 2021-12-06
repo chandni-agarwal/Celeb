@@ -143,6 +143,7 @@ namespace Microsoft.Teams.Apps.Celebration
             {
                 EventId = eventId,
                 ClientTimeZone = clientTimeZone,
+                UserDetails = (IList<User>)await this.userManagementHelper.GetUserByAadObjectNameAsync(),
                 TeamDetails = await this.GetTeamDetailsWhereBothBotAndUsersAreInAsync(userObjectId),
                 TimeZoneList = Common.GetTimeZoneList(),
                 SelectedTimeZoneId = windowsTimeZoneId,
