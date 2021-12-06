@@ -87,9 +87,10 @@
                 <div class="manage-event-field-name">
                     Share this celebration with
                 </div>
-                <select id ="eventReciever">
-                    <option>
+              <!--  <select id ="eventReciever">
+                    <option>-->
                         <div id="divMultiSelectTeam">
+                            Select Teams
                             <select id="eventTeam" multiple>
                                 @foreach (var team in Model.TeamDetails)
                                 {
@@ -97,8 +98,8 @@
                                 }
                             </select>
                         </div>
-                    </option>
-                    <option>
+              <!--    </option>
+                    <option> -->
                         <div id="">
                             <select id="eventUser" multiple>
                                 @foreach (var user in Model.UserDetails)
@@ -107,8 +108,8 @@
                                 }
                             </select>
                         </div>
-                    </option>
-                </select>
+                <!--    </option>
+                </select> -->
             </div>
 
             <div id="divTimeZones">
