@@ -87,29 +87,22 @@
                 <div class="manage-event-field-name">
                     Share this celebration with
                 </div>
-              <!--  <select id ="eventReciever">
-                    <option>-->
-                        <div id="divMultiSelectTeam">
-                            Select Teams
-                            <select id="eventTeam" multiple>
-                                @foreach (var team in Model.TeamDetails)
-                                {
-                                    <option value="@team.Id" selected>@team.Name</option>
-                                }
-                            </select>
-                        </div>
-              <!--    </option>
-                    <option> -->
-                        <div id="">
-                            <select id="eventUser" multiple>
-                                @foreach (var user in Model.UserDetails)
-                                {
-                                    <option value="@user.ConversationId" selected>@user.DisplayName</option>
-                                }
-                            </select>
-                        </div>
-                <!--    </option>
-                </select> -->
+                <div id="divMultiSelectTeam">
+                    <select id="eventTeam" multiple>
+                        @foreach (var team in Model.TeamDetails)
+                        {
+                            <option value="@team.Id" selected>@team.Name</option>
+                        }
+                    </select>
+                </div>
+                <div>
+                    <select id="eventUser" multiple>
+                        @foreach (var user in Model.UserDetails)
+                        {
+                            <option value="@user.ConversationId" selected>@user.DisplayName</option>
+                        }
+                    </select>
+                </div>
             </div>
 
             <div id="divTimeZones">
