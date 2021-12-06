@@ -30,11 +30,11 @@
                             var x = list[i].Uri.AbsoluteUri;
                             var isActive = ((Model.CelebrationEvent == null) && (i == 0)) ||
                                 (Model.CelebrationEvent?.ImageUrl == x);
-                        <div class="carousel-item @(isActive ? "active" : string.Empty)">
-                            <img src="@x">
-                        </div>
-                            }
+                            <div class="carousel-item @(isActive ? "active" : string.Empty)">
+                                <img src="@x">
+                            </div>
                         }
+                    }
                 </div>
 
                 <!-- Left and right controls -->
@@ -95,6 +95,9 @@
                         }
                     </select>
                 </div>
+            </div>
+
+            <div id="divUsers">
                 <div>
                     <select id="eventUser" multiple>
                         @foreach (var user in Model.UserDetails)
