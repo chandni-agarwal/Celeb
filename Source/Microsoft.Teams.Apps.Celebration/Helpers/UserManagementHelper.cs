@@ -134,12 +134,12 @@ namespace Microsoft.Teams.Apps.Celebration.Helpers
         }
 
         /// <inheritdoc/>
-        public async Task<Models.User> GetUserByAadObjectNameAsync()
+        public async Task<IList<Models.User>> GetUserByAadObjectNameAsync()
         {
             await this.EnsureInitializedAsync();
 
-            return (await this.documentClient.CreateDocumentQuery<Models.User>(this.usersCollection.SelfLink)
-                   .AsDocumentQuery().ToListAsync()).FirstOrDefault();
+            return await this.documentClient.CreateDocumentQuery<Models.User>(this.usersCollection.SelfLink)
+                   .AsDocumentQuery().ToListAsync();
         }
 
         /// <inheritdoc/>
