@@ -85,7 +85,7 @@
 
             <div id="divTeams">
                 <div class="manage-event-field-name">
-                    Share this celebration with
+                    Share this celebration with Team
                 </div>
                 <div id="divMultiSelectTeam">
                     <select id="eventTeam" multiple>
@@ -98,7 +98,10 @@
             </div>
 
             <div id="divUsers">
-                <div>
+                <div class="manage-event-field-name">
+                    Share this celebration with User
+                </div>
+                <div id="divMultiSelectUser">
                     <select id="eventUser" multiple>
                         @foreach (var user in Model.UserDetails)
                         {
@@ -179,8 +182,7 @@
         buttonWidth: '100%',
         maxHeight: 300,
         noneSelectedText: 'Which user would you like to celebrate with?',
-        optionsSelectedText: '',
-        scrollY : 800
+        optionsSelectedText: ''
     })
     $('#eventType').customMultiselect({
     buttonWidth: '100%',
@@ -228,7 +230,6 @@
     });
     $("#eventUser").addFancyScrollbar({
         height : '300',
-        offset: '10',
     });
 
     $('#timezonelist').addFancyScrollbar({
