@@ -105,7 +105,7 @@
                     <select id="eventUser" multiple>
                         @foreach (var user in Model.UserDetails)
                         {
-                            <option value="@user.Id" selected>@user.DisplayName</option>
+                            <option value="@user.Id" deselected>@user.DisplayName</option>
                         }
                     </select>
                 </div>
@@ -162,7 +162,7 @@
         // Set selected users
         if (Model.CelebrationEvent.Users != null)
         {
-            @: $("#eventUser").val(@Html.Raw(Json.Encode(Model.CelebrationEvent.Users.Select(x => x.DisplayName))));
+            @: $("#eventUser").val(@Html.Raw(Json.Encode(Model.CelebrationEvent.Users.Select(x => x.AadObjectId)))).search();
         }
     }
     else
@@ -183,7 +183,7 @@
         noneSelectedText: 'Which user would you like to celebrate with?',
         optionsSelectedText: '',
         maxHeight: 400,
-        position: 'top',
+        position: 'top'
     })
     $('#eventType').customMultiselect({
     buttonWidth: '100%',
