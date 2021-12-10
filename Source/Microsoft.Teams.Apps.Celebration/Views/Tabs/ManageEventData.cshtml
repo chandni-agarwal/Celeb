@@ -165,8 +165,7 @@
         // Set selected users
         if (Model.CelebrationEvent.Users != null)
         {
-            @: $("#eventUser").val(@Html.Raw(Json.Encode(Model.CelebrationEvent.Users.Select(x => x.AadObjectId))));
-            @:  $("#eventUser").selectize({sortField: 'text'});
+            @: $("#eventUser").val(@Html.Raw(Json.Encode(Model.CelebrationEvent.Users.Select(x => x.AadObjectId)))).selectize({ sortField: 'text' });
         }
     }
     else
