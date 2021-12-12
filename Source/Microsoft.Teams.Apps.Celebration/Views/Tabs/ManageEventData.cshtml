@@ -105,12 +105,12 @@
                     Share this celebration with User
                 </div>
                 <div id="divMultiSelectUser">
-                    <select id="eventUser" multiple data-mdb-filter="true">
+                    <datalist id="eventUser" multiple>
                         @foreach (var user in Model.UserDetails)
                         {
                             <option value="@user.Id" deselected data-mdb-filter="true">@user.DisplayName</option>
                         }
-                    </select>
+                    </datalist>
                 </div>
             </div>
 
