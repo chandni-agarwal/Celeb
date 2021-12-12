@@ -1,7 +1,6 @@
 ﻿@using Microsoft.Teams.Apps.Celebration.Models;
 @using Microsoft.Teams.Apps.Celebration.Helpers;
 @model ManageEventViewModel
-<script src="https://unpkg.com/@Html.Raw("@")microsoft/mgt/dist/bundle/mgt-loader.js"></script>
 
 <div class="manage-event-outer-div scrollbar-dynamic">
     <div class="manage-event-inner-div">
@@ -98,13 +97,11 @@
                 </div>
             </div>
 
-            <mgt-people-picker></mgt-people-picker>
             <div id="divUsers">
                 <div class="manage-event-field-name">
                     Share this celebration with User
                 </div>
                 <div id="divMultiSelectUser">
-                    <mgt-people-picker></mgt-people-picker>
                     <select id="eventUser" multiple>
                         @foreach (var user in Model.UserDetails)
                         {
@@ -165,7 +162,7 @@
         // Set selected users
         if (Model.CelebrationEvent.Users != null)
         {
-            @: $("#eventUser").val(@Html.Raw(Json.Encode(Model.CelebrationEvent.Users.Select(x => x.AadObjectId)))).search(x;
+            @: $("#eventUser").val(@Html.Raw(Json.Encode(Model.CelebrationEvent.Users.Select(x => x.AadObjectId))));
         }
     }
     else
@@ -180,7 +177,7 @@
         noneSelectedText: 'Which teams would you like to celebrate with?',
         optionsSelectedText: '',
     })
-    $('#eventUser').attr('data-live-search', true);
+
     $('#eventUser').customMultiselect({
         buttonWidth: '100%',
         noneSelectedText: 'Which user would you like to celebrate with?',
