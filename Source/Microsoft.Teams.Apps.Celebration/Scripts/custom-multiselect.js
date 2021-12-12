@@ -9,6 +9,10 @@
         selector.nextAll(".btn-group:first").find(".multiselect-container .checkbox").append("<span class='checkmark'></span>");
     }
 
+    function addSearchbox(selector) {
+        return("<div class='input'></div>")
+    }
+
     function bindEvents(selector,options) {
         selector.closest(".multiselect-native-select").find(".multiselect.dropdown-toggle").click(function (event) {
             hideAllDropdowns();
@@ -50,6 +54,7 @@
         this.multiselect(options);
         bindEvents(this, options);
         addCustomCheckbox(this);
+        addSearchbox(this);
         if (this.attr('multiple') === "multiple") {
             updateSelectedText(this, options);
         } else {
