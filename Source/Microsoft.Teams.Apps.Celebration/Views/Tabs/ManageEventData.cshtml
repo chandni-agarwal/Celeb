@@ -1,7 +1,6 @@
 ﻿@using Microsoft.Teams.Apps.Celebration.Models;
 @using Microsoft.Teams.Apps.Celebration.Helpers;
 @model ManageEventViewModel
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <div class="manage-event-outer-div scrollbar-dynamic">
     <div class="manage-event-inner-div">
@@ -103,13 +102,12 @@
                     Share this celebration with User
                 </div>
                 <div id="divMultiSelectUser">
-                    <input list="eventUser">
-                    <datalist id="eventUser" multiple>
+                    <select id="eventUser" multiple>
                         @foreach (var user in Model.UserDetails)
                         {
-                            <option value="@user.DisplayName" deselected data-mdb-filter="true">@user.DisplayName</option>
+                            <option value="@user.Id" deselected>@user.DisplayName</option>
                         }
-                    </datalist>
+                    </select>
                 </div>
             </div>
 
@@ -164,7 +162,7 @@
         // Set selected users
         if (Model.CelebrationEvent.Users != null)
         {
-            @: $("#eventUser").val(@Html.Raw(Json.Encode(Model.CelebrationEvent.Users.Select(x => x.DisplayName))));
+            @: $("#eventUser").val(@Html.Raw(Json.Encode(Model.CelebrationEvent.Users.Select(x => x.AadObjectId))));
         }
     }
     else
@@ -186,8 +184,12 @@
         optionsSelectedText: '',
         maxHeight: 400,
         position: 'top',
+    })
+
+    $('#eventUser').dropdown({
         search: true
     })
+
     $('#eventType').customMultiselect({
     buttonWidth: '100%',
         maxHeight: 138,
