@@ -107,7 +107,7 @@
                     <datalist id="eventUser" multiple>
                         @foreach (var user in Model.UserDetails)
                         {
-                            <option value="@user.Id" deselected data-mdb-filter="true">@user.DisplayName</option>
+                            <option value="@user.DisplayName" deselected data-mdb-filter="true">@user.DisplayName</option>
                         }
                     </datalist>
                 </div>
