@@ -102,13 +102,13 @@
                     Share this celebration with User
                 </div>
                 <div id="divMultiSelectUser">
-                    <select id="eventUser" multiple>
+                    <select id="eventUser" multiple class="fa-search">
                         @foreach (var user in Model.UserDetails)
                         {
                             <option value="@user.Id" deselected data-mdb-filter="true">@user.DisplayName</option>
                         }
                     </select>
-                    <input type="submit" value="Filter" />
+                    <input type="search" value="" />
                 </div>
             </div>
 
