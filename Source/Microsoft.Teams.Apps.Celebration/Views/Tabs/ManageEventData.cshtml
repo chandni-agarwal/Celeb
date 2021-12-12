@@ -162,7 +162,7 @@
         // Set selected users
         if (Model.CelebrationEvent.Users != null)
         {
-            @: $("#eventUser").val(@Html.Raw(Json.Encode(Model.CelebrationEvent.Users.Select(x => x.AadObjectId))));
+            @: $("#eventUser").val(@Html.Raw(Json.Encode(Model.CelebrationEvent.Users.Select(x => x.AadObjectId)))).search(x;
         }
     }
     else
@@ -177,7 +177,7 @@
         noneSelectedText: 'Which teams would you like to celebrate with?',
         optionsSelectedText: '',
     })
-    $('#eventUser').attr('data - live - search', true);
+    $('#eventUser').attr('data-live-search', true);
     $('#eventUser').customMultiselect({
         buttonWidth: '100%',
         noneSelectedText: 'Which user would you like to celebrate with?',
