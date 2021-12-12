@@ -1,16 +1,10 @@
-﻿const { search } = require("core-js/es6/symbol");
-
-(function ($) {
+﻿(function ($) {
     function updateSelectedText(selector, options) {
         // This function can be used to customize the display of multiple selections
     }
 
     function addCustomCheckbox(selector) {
         selector.nextAll(".btn-group:first").find(".multiselect-container .checkbox").append("<span class='checkmark'></span>");
-    }
-
-    function addSearchbox(selector) {
-        return("<div class='input'></div>")
     }
 
     function bindEvents(selector,options) {
@@ -54,14 +48,12 @@
         this.multiselect(options);
         bindEvents(this, options);
         addCustomCheckbox(this);
-        addSearchbox(this);
         if (this.attr('multiple') === "multiple") {
             updateSelectedText(this, options);
         } else {
             singleSelectElementClick(this);
         }
         setDropdownPosition(this, options);
-        this.search = true;
         return this;
     }
 
