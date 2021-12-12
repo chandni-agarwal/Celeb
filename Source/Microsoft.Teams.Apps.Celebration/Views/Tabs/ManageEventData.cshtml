@@ -102,7 +102,7 @@
                     Share this celebration with User
                 </div>
                 <div id="divMultiSelectUser">
-                    <select id="eventUser" multiple class="box">
+                    <select id="eventUser" multiple>
                         @foreach (var user in Model.UserDetails)
                         {
                             <option value="@user.Id" deselected data-mdb-filter="true">@user.DisplayName</option>
@@ -177,8 +177,6 @@
         noneSelectedText: 'Which teams would you like to celebrate with?',
         optionsSelectedText: '',
     })
-
-    $('#eventUser').attr('data - live - search', true);
 
     $('#eventUser').customMultiselect({
         buttonWidth: '100%',
