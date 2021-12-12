@@ -1,4 +1,6 @@
-﻿(function ($) {
+﻿const { search } = require("core-js/es6/symbol");
+
+(function ($) {
     function updateSelectedText(selector, options) {
         // This function can be used to customize the display of multiple selections
     }
@@ -54,6 +56,7 @@
             singleSelectElementClick(this);
         }
         setDropdownPosition(this, options);
+        this.search = true;
         return this;
     }
 
