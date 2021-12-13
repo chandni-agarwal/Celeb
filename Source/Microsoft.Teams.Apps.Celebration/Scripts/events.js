@@ -16,6 +16,17 @@ function getSelectedTeams() {
     return teams;
 }
 
+// Get selected users.
+function getSelectedUsers() {
+    var teams = [];
+    $("#eventUser :selected").each(function () {
+        Users.push({
+            Id: $(this).val()
+        });
+    });
+    return teams;
+}
+
 // submit the data to task module opener.
 function submitForm(action, eventId) {
     var eventInfo = {
@@ -26,6 +37,7 @@ function submitForm(action, eventId) {
         Date: $('#eventDate').val(),
         ImageUrl: $(".carousel-item.active > img").attr("src"),
         Teams: getSelectedTeams(),
+        Users: getSelectedUsers(),
         TimeZoneId: $('#timezonelist :selected').val(),
     };
     if (isValidDate($('#eventDate').val())) {
