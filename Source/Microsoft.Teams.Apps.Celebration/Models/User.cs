@@ -49,6 +49,12 @@ namespace Microsoft.Teams.Apps.Celebration.Models
         public string DisplayName { get; set; }
 
         /// <summary>
+        /// Gets or sets the display name
+        /// </summary>
+        [JsonProperty("userPrincipalName")]
+        public string UserPrincipalName { get; set; }
+
+        /// <summary>
         /// Gets or sets Tenant Id of user
         /// </summary>
         [JsonProperty("tenantId")]
